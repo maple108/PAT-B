@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+	char s[101];
+	int i,n = 0;
+	gets(s);
+	for (i = 0;i<strlen(s);i++)
+	{
+		n = n+s[i]-48;
+	}
+	int mask=1,t=n;
+	while (t >9)
+	{	
+		t /=10;
+		mask *=10;
+	}
+	int x;
+	while (mask > 0)
+	{
+		x = n/mask;
+		n = n%mask;
+		mask /=10;
+		switch(x)
+		{
+			case 0: printf("ling");break;
+			case 1: printf("yi");break; 
+			case 2:printf("er");break;
+			case 3:printf("san");break;
+			case 4:printf("si");break;
+			case 5:printf("wu");break;
+			case 6:printf("liu");break;
+			case 7:printf("qi");break;
+			case 8:printf("ba");break;
+			case 9:	printf("jiu");break;
+		 } 
+		 if (mask >0)
+		 	printf(" ");
+	}
+return 0;
+}
